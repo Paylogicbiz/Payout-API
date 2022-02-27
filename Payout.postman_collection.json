@@ -1,0 +1,299 @@
+{
+	"info": {
+		"_postman_id": "9a3bbc3b-285d-4c05-a078-a3247af91d77",
+		"name": "Payout",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Token",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "access_key_id",
+							"value": "9386f628cd132fc183a323c68ae66109b4f7d6b7",
+							"type": "text"
+						},
+						{
+							"key": "secret_access_key",
+							"value": "200514e418d666cd0a6daf979c78657d561be824",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://client-sandbox.payscape.net/api/token",
+					"protocol": "https",
+					"host": [
+						"client-sandbox",
+						"payscape",
+						"net"
+					],
+					"path": [
+						"api",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Save beneficiary",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer 872|x2FDsOOtgByeCzvZGgJXTa9dMHiO84wDsn2362F3"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"Mandy martin\",\n  \"email_id\": \"paylogic@cashfree.com\",\n  \"mobile\": \"8652401995\",\n  \"account_number\": \"0001140001772\",\n  \"ifsc\": \"HDFC0000001\",\n  \"address\": \"ABC Street\",\n  \"city\": \"thane\",\n  \"state\": \"maharashtra\",\n  \"pincode\": \"400605\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://client-sandbox.payscape.net/api/v1/beneficiary/save",
+					"protocol": "https",
+					"host": [
+						"client-sandbox",
+						"payscape",
+						"net"
+					],
+					"path": [
+						"api",
+						"v1",
+						"beneficiary",
+						"save"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetBeneficiaryDetails",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 872|x2FDsOOtgByeCzvZGgJXTa9dMHiO84wDsn2362F3",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"account_number\": \"00011020001772\",\r\n    \"ifsc\": \"HDFC0000001\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://client-sandbox.payscape.net/api/v1/beneficiary/detail",
+					"protocol": "https",
+					"host": [
+						"client-sandbox",
+						"payscape",
+						"net"
+					],
+					"path": [
+						"api",
+						"v1",
+						"beneficiary",
+						"detail"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Beneficiary List",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer 872|x2FDsOOtgByeCzvZGgJXTa9dMHiO84wDsn2362F3"
+					}
+				],
+				"url": {
+					"raw": "https://client-sandbox.payscape.net/api/v1/beneficiary/list",
+					"protocol": "https",
+					"host": [
+						"client-sandbox",
+						"payscape",
+						"net"
+					],
+					"path": [
+						"api",
+						"v1",
+						"beneficiary",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Payout Balance",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 872|x2FDsOOtgByeCzvZGgJXTa9dMHiO84wDsn2362F3",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://client-sandbox.payscape.net/api/v1/payout/balance",
+					"protocol": "https",
+					"host": [
+						"client-sandbox",
+						"payscape",
+						"net"
+					],
+					"path": [
+						"api",
+						"v1",
+						"payout",
+						"balance"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Transfer",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer 870|VFDOeFaZtopaSUM9YLS1axSz95g90hHOTRsi44IS"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"beneficiary_id\":\"V000001564\",\n  \"amount\": \"200\",\n  \"narrative\": \"test3\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://client-sandbox.payscape.net/api/v1/beneficiary/transfer",
+					"protocol": "https",
+					"host": [
+						"client-sandbox",
+						"payscape",
+						"net"
+					],
+					"path": [
+						"api",
+						"v1",
+						"beneficiary",
+						"transfer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Transferstatus",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 870|VFDOeFaZtopaSUM9YLS1axSz95g90hHOTRsi44IS",
+						"type": "default"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "https://client-sandbox.payscape.net/api/v1/payout/transferstatus/transferid/66",
+					"protocol": "https",
+					"host": [
+						"client-sandbox",
+						"payscape",
+						"net"
+					],
+					"path": [
+						"api",
+						"v1",
+						"payout",
+						"transferstatus",
+						"transferid",
+						"66"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Withdraw",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 872|x2FDsOOtgByeCzvZGgJXTa9dMHiO84wDsn2362F3",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"amount\": \"100\",\n  \"narrative\": \"test2\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://client-sandbox.payscape.net/api/v1/payout/withdraw",
+					"protocol": "https",
+					"host": [
+						"client-sandbox",
+						"payscape",
+						"net"
+					],
+					"path": [
+						"api",
+						"v1",
+						"payout",
+						"withdraw"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
